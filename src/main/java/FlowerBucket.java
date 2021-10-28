@@ -6,18 +6,25 @@ public class FlowerBucket {
 
     public double getPrice(){
         double bucketPrice = 0;
-        for (FlowerPack bucket: flowerBucket){
-            bucketPrice += bucket.getPrice();
+        for (FlowerPack pack: flowerBucket){
+            bucketPrice += pack.getPrice();
         }
         return bucketPrice;
     }
 
-    public void add(FlowerPack bucket) {
-        flowerBucket.add(bucket);
+    public void add(FlowerPack pack) {
+        flowerBucket.add(pack);
     }
 
     public FlowerBucket() {
         flowerBucket = new ArrayList<FlowerPack>();
     }
 
+    public List<FlowerPack> getPacks() {
+        List<FlowerPack> packs = null;
+        for (FlowerPack pack: flowerBucket){
+            packs.add(pack);
+        }
+        return packs;
+    }
 }
