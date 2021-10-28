@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlowerStore {
-
+class Store {
     List<FlowerBucket> buckets;
 
     public void add(FlowerBucket bucket) {
@@ -12,7 +11,7 @@ public class FlowerStore {
     public List<FlowerBucket> search(Flower flower) {
         List<FlowerBucket> findBuckets = new ArrayList<FlowerBucket>();
         for (FlowerBucket bucket: buckets) {
-            for (FlowerPack pack: bucket) {
+            for (FlowerPack pack: bucket.getPacks()) {
                 if (pack.flower.equals(flower)) {
                     findBuckets.add(bucket);
                     break;
